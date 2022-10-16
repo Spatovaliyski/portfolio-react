@@ -1,0 +1,73 @@
+html {
+	box-sizing: border-box;
+}
+
+*, 
+::after, 
+::before {
+    -webkit-box-sizing: inherit;
+    box-sizing: inherit;
+}
+
+body {
+    color: #FFF;
+    font-size: 1rem;
+    font-family: $font-stack;
+    background: $color-body;
+}
+
+a {
+    &:hover {
+        color: $color-toxic;
+    }
+}
+
+ul,
+ol {
+	margin: 0 0 1.5em 3em;
+}
+
+ul {
+	list-style: disc;
+}
+
+ol {
+	list-style: decimal;
+}
+
+li > ul,
+li > ol {
+	margin-bottom: 0;
+	margin-left: 1.5em;
+}
+
+dt {
+	font-weight: 700;
+}
+
+dd {
+	margin: 0 1.5em 1.5em;
+}
+
+
+::-moz-selection {
+	color: #000;
+	background: $color-toxic;
+}
+  
+::selection {
+	color: #000;
+	background: $color-toxic;
+}
+
+
+.site-container {
+	display: flex;
+	flex-flow: column wrap;
+	min-height: 100vh;
+
+	// There's one main in the page
+	main {
+		flex: 1 1 100%;
+	}
+}

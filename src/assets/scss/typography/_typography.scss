@@ -1,0 +1,29 @@
+$font-stack: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+
+a {
+	color: #FFF;
+	transition: .2s $transition-smooth;
+
+	&:visited {
+		color: inherit;
+	}
+
+	&:hover,
+	&:focus,
+	&:active {
+		color: $color-toxic;
+	}
+
+	&:focus {
+		outline: none;
+	}
+
+	&:hover,
+	&:active {
+		outline: 0;
+	}
+}
+
+a.text-white {
+	color: #FFF;
+}

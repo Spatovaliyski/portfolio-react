@@ -1,0 +1,237 @@
+// Global properties
+$side-padding-desktop: 2em;
+$side-padding-mobile: 1em;
+
+.sections {
+	max-width: 96em;
+	margin: 0 auto;
+	transition: .6s $transition-smooth;
+
+	&.site-main {
+		margin-top: 12em;
+	}
+
+	&.switching {
+		transform: translateY(-3em);
+		opacity: 0;
+	}
+
+	// If the .sections wrap has only one secion, let's make it fit the screen!
+	.section:only-child {
+		min-height: 60vh;
+	}
+}
+
+.section {
+	padding: 0 $side-padding-desktop;
+
+	@media (max-width: $breakpoint-medium) {
+		padding: 0 $side-padding-mobile;
+	}
+
+	// This will hide a given section with the fadeUp animation (see animations.scss)
+	&.hide-section {
+		animation: fadeUp 0.7s $transition-reveal forwards !important;
+	}
+
+	// This will show a given section with the reveal animation (see animations.scss)
+	// This has higher priority than hide-section in case we're doing a transition from hide -> show
+	&.show-section {
+		animation: revealUp 0.7s $transition-reveal forwards !important;
+	}
+
+	&-welcome {
+		min-height: 90vh;
+		display: flex;
+		align-items: center;
+
+		@media (max-width: $breakpoint-medium) {
+			margin-top: 20vh;
+			min-height: 60vh; // Reduce the height a lil bit for all sorts of devices under $medium. The intent is to show a little bit of the next section content while being tidy
+		}
+
+		svg {
+			width: 100%;
+		}
+
+		.section-aside {
+			flex: 1;
+
+			@media (max-width: $breakpoint-medium) {
+				position: absolute;
+				z-index: -12;
+			}
+		}
+
+		.section-container {
+			align-items: center;
+		}
+
+		.headline-title {
+			p, span {
+				@include mixinRevealText;
+			}
+
+			span {
+				&:before {
+					color: $color-toxic;
+				}
+			}
+		}
+
+		.headline-catch {
+			@include mixinRevealText;
+
+			--reveal-text-time: 1.8s;
+		}
+
+		.headline-title {
+			--reveal-text-time: 1.2s;
+
+			p {
+				display: inline-block;
+				margin: 0;
+			}
+		}
+
+		.headline-subtitle {
+			@include mixinRevealText;
+
+			--reveal-text-time: 1.8s;
+		}
+
+		.copy p {
+			@include mixinRevealText;
+
+			--reveal-text-time: 1.8s;
+		}
+	}
+
+	&-experience {
+		padding: 5em $side-padding-desktop;
+
+		@media (max-width: $breakpoint-medium) {
+			padding: 2.5em $side-padding-mobile;
+		}
+	}
+
+	&-container {
+		display: flex;
+		flex-flow: row wrap;
+		justify-content: space-between;
+	}
+
+	&-projects {
+		width: 100%;
+		padding: 5em $side-padding-desktop;
+
+		@media (max-width: $breakpoint-medium) {
+			padding: 2.5em $side-padding-mobile;
+		}
+
+		.headline-catch {
+			margin-left: 0;
+		}
+
+		.section-container {
+			display: block;
+		}
+
+		.section-title {
+			max-width: 100%;
+			text-align: center;
+
+			@media (max-width: $breakpoint-medium) {
+				text-align: left;
+			}
+		}
+	}
+
+	&-contact {
+		width: 100%;
+
+		.section-container {
+			padding: 6em $side-padding-desktop;
+			background: lighten($color-body, 2);
+
+			@media (max-width: $breakpoint-medium) {
+				padding: 3em $side-padding-mobile;
+			}
+		}
+
+		.copy {
+			max-width: 30em;
+			margin: 0 auto;
+		}
+
+		.headline-catch {
+			margin-left: 0;
+		}
+
+		.section-container {
+			display: block;
+		}
+
+		.section-title {
+			max-width: 100%;
+			text-align: center;
+		}
+
+		.copy-chat-popup {
+			opacity: 0;
+			margin-left: 1em;
+			transition: .2s $transition-smooth;
+			position: absolute;
+
+			&.is-visible {
+				opacity: 1;
+			}
+		}
+
+		.contact-group {
+			margin: 3em 0;
+
+			@media (max-width: $breakpoint-medium) {
+				.button {
+					display: inline-block;
+					margin-bottom: 1em;
+				}
+			}
+		}
+
+		.contact-copy {
+			margin: 0 1em;
+
+			@media (max-width: $breakpoint-medium) {
+				display: block;
+			}
+
+			a {
+				color: #FFF;
+			}
+		}
+		
+	}
+
+	&-aside {
+		flex-basis: 680px;
+		margin-left: 2em;
+
+		@media (max-width: 1460px) {
+			flex: 1;
+		}
+
+		@media (max-width: $breakpoint-large) {
+			margin-left: 0;
+			flex: 1 1 100%;
+		}
+	}
+
+	&-title {
+		max-width: 42em;
+
+		span {
+			color: $color-toxic
+		}
+	}
+}
