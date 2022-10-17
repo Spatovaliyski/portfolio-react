@@ -4,7 +4,7 @@
 
 This project was created to duplicate the WordPress version of my portfolio found here: [https://github.com/Spatovaliyski/portfolio](https://github.com/Spatovaliyski/portfolio)
 
-I've bootstrapped [https://github.com/facebook/create-react-app](Create React App) To make this work
+I've bootstrapped [https://github.com/facebook/create-react-app] To make this work
 
 ## Available Scripts
 
