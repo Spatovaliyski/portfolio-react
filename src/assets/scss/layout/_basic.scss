@@ -14,6 +14,42 @@ body {
     font-size: 1rem;
     font-family: $font-stack;
     background: $color-body;
+
+	&:before {
+		content: '';
+		transition: .6s $transition-reveal;
+		opacity: 0;
+		pointer-events: none;
+	}
+
+	&.load-reveal {
+		.sections {
+			overflow: hidden;
+		}
+		
+		.section {
+			animation: loadSite 0.7s $transition-reveal forwards;
+		}
+	}
+
+	@media (max-width: $breakpoint-medium) {
+		&.is-menu-opened {
+			position: relative;
+	
+			&:before {
+				opacity: 1;
+				content: '';
+				width: 100%;
+				height: 100%;
+				background: rgba(22, 22, 29, .9);
+				position: absolute;
+				top: 0;
+				left: 0;
+				z-index: 95;
+				backdrop-filter: blur(5px);
+			}
+		}
+	}
 }
 
 a {

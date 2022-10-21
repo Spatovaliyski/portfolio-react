@@ -7,10 +7,10 @@ export default function index() {
 	return (
 		<>
 			{/* Organise sections in a list. Order of sections can be switched here. By default Hero should be first */}
-			<Hero />
-			<Skills />
-			<Portfolio />
-			<Contact />
+			<Hero id="hero" />
+			<Skills id="experience" />
+			<Portfolio id="projects" />
+			<Contact id="contact" />
 		</>
 		
 	)

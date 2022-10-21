@@ -1,11 +1,10 @@
-import Header from './Header.js';
-import Footer from './Footer.js';
-
+import Header from './Header';
+import Footer from './Footer';
 import Sections from './components/sections/index.js';
 
-function App() {
 
-	return (
+function App() {
+	return (	
 		<div className="site-container">
 			<Header />
 			
