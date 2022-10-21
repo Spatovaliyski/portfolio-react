@@ -1,7 +1,7 @@
 {
-  "homepage": "https://spatovaliyski.github.io/portfolio-react",
   "name": "portfolio",
   "version": "0.1.0",
+  "homepage": "https://spatovaliyski.github.io/portfolio-react",
   "private": true,
   "dependencies": {
     "@integreat-app/react-sticky-headroom": "^1.2.3",
@@ -17,8 +17,9 @@
   },
   "scripts": {
     "predeploy": "npm run build",
-    "build": "gh-pages -d build",
+    "deploy": "gh-pages -d build",
     "start": "react-scripts start",
+    "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
@@ -39,5 +40,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "gh-pages": "^4.0.0"
   }
 }
