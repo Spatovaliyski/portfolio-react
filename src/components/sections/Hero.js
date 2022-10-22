@@ -26,7 +26,6 @@ export default function Hero() {
 			let component = a;
 		
 			component.setAttribute('data-context', component.textContent);
-			console.log(component);
 		});
 	}
 

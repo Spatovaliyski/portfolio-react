@@ -6,6 +6,51 @@ import Icons from './components/icons/Icons';
 
 function Header() {
 	/**
+	 * MENU CLICK ANIMATION
+	 */
+	 function clickAnimation(e) {
+		let body = document.querySelector('body');
+		const container = document.querySelector(".sections");
+		let sections = container.querySelectorAll('.section');
+
+		e.preventDefault();
+		if (body.classList.contains('is-animation-ongoing')) {
+			return false;
+		}
+
+		function clearState() {
+			for(let i = 0; i <= sections.length - 1; i++) {
+				sections[i].classList.remove('hide-section', 'show-section');
+			}
+		}
+		clearState();
+
+		body.classList.add('is-animation-ongoing');
+		for(let i = 0; i <= sections.length - 1; i++) {
+			sections[i].classList.add('hide-section');
+		}
+		
+		let link = e.target.hash;
+		setTimeout(() => {
+			for(let i = 0; i <= sections.length - 1; i++) {
+				sections[i].classList.remove('hide-section');
+				sections[i].classList.add('show-section');
+			}
+
+			document.querySelector(link).scrollIntoView({
+				block: 'start',
+				behavior: 'instant'
+			});
+			window.scrollBy(0, -120);
+		}, 1000);
+
+		setTimeout(() => {
+			body.classList.remove('is-animation-ongoing');
+			clearState();
+		}, 2000);
+	};
+	
+	/**
 	 * STICKY HEADER
 	 */
 	const [fixed, setFixed] = useState(false);
@@ -58,9 +103,9 @@ function Header() {
 			
 			<div className="header-nav">
 				<ul className="nav-menu">
-					<li ref={addToRefs} className="nav-menu-item"><a href="#experience">Experience</a></li>
-					<li ref={addToRefs} className="nav-menu-item"><a href="#work">Projects</a></li>
-					<li ref={addToRefs} className="nav-menu-item"><a href="#contact">Contact</a></li>
+					<li ref={addToRefs} onClick={clickAnimation} className="nav-menu-item"><a href="#experience">Experience</a></li>
+					<li ref={addToRefs} onClick={clickAnimation} className="nav-menu-item"><a  href="#work">Projects</a></li>
+					<li ref={addToRefs} onClick={clickAnimation} className="nav-menu-item"><a href="#contact">Contact</a></li>
 					<li ref={addAdditionalRefs} className="nav-menu-item spacer icon item-additional"><a href="https://www.linkedin.com/in/martin-spatovaliyski-554622aa/" target="_blank" rel="noreferrer">{<Icons name="linkedin"/>}</a></li>
 					<li ref={addAdditionalRefs} className="nav-menu-item icon item-additional"><a href="https://github.com/Spatovaliyski" target="_blank" rel="noreferrer">{<Icons name="github"/>}</a></li>
 					<li ref={addAdditionalRefs} className="nav-menu-item icon item-additional"><a href="https://profiles.wordpress.org/mspatovaliyski/" target="_blank" rel="noreferrer">{<Icons name="wordpress"/>}</a></li>
