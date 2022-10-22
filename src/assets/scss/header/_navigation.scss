@@ -10,6 +10,7 @@
 		display: inline-block;
 		margin-right: 1.5em;
 		opacity: 0;
+		line-height: 1;
 
 		a {
 			color: inherit;
@@ -45,6 +46,7 @@
 		border-radius: 4px;
 		transition: .4s $transition-smooth;
 		margin-right: 0;
+		line-height: 1.5;
 
 		a {
 			padding: 0.5em 1em;
