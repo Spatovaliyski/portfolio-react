@@ -1,6 +1,35 @@
+import { useEffect, useState } from 'react';
 import { ReactComponent as Blob } from '../../assets/images/hero_logo.svg';
 
-export default function Hero() {
+
+export default function Hero() { 
+	const [isLoaded, setIsLoaded] = useState(false);
+	const [isPageLoaded, setIsPageLoaded] = useState(false); //this helps
+
+	useEffect(() => {
+		setIsLoaded(true);
+	}, []);
+
+	useEffect(() => {
+		if (isLoaded) {
+			setIsPageLoaded(true);
+		}
+	}, [isLoaded]);
+
+	/**
+	 * Handle data-context animation for each HTML tag
+	 */
+	if (isPageLoaded) {
+		let attribute = document.querySelectorAll('[data-context]');
+
+		attribute.forEach((a) => {
+			let component = a;
+		
+			component.setAttribute('data-context', component.textContent);
+			console.log(component);
+		});
+	}
+
 	return (
 		<section className="section section-welcome">
 			<div className="section-container">
@@ -28,3 +57,5 @@ export default function Hero() {
 		</section>
 	)
 }
+ 
+

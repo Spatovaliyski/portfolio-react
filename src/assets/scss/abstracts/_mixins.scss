@@ -12,12 +12,12 @@
 
 @mixin mixinRevealText {
 	transition: color 0s $transition-smooth;
-	//color: rgba(white, .1);
+	color: rgba(white, .1);
 	position: relative;
 	
 	&:before {
 		color: #FFF;
-		//content: attr(data-context);
+		content: attr(data-context);
 		position: absolute;
 		will-change: clip-path;
 		z-index: -10;

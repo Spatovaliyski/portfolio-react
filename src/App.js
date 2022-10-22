@@ -1,7 +1,6 @@
 import Header from './Header';
 import Footer from './Footer';
-import Sections from './components/sections/index.js';
-
+import Sections from './components/sections/index';
 
 function App() {
 	return (	
