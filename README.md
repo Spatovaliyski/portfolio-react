@@ -6,6 +6,10 @@ This project was created to duplicate the WordPress version of my portfolio foun
 
 I've bootstrapped [https://github.com/facebook/create-react-app] To make this work
 
+GitHub pages deployments log is available here: [https://github.com/Spatovaliyski/portfolio-react/deployments/activity_log?environment=github-pages](https://github.com/Spatovaliyski/portfolio-react/deployments/activity_log?environment=github-pages)
+
+And actual page here: [https://spatovaliyski.github.io/portfolio-react/](https://spatovaliyski.github.io/portfolio-react/)
+
 ## Available Scripts
 
 In the project directory, you can run:
