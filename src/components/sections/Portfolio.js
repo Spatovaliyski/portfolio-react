@@ -27,19 +27,19 @@ export default function Portfolio() {
 	useEffect(() => {
 		gsap.to( headlineRefs.current, { opacity: 1, y: 0, duration: .8, ease: "power2.inOut", scrollTrigger: { trigger: '.section-projects'}, stagger: .1})
 		
-		let counter = 0.4;
+		let counter = 0.3;
 		portfolioRefs.current.forEach((el) => {
 			gsap.fromTo( el, {
 				autoAlpha: 0,
 				y: 40, 
 			}, {
 				y: 0,
-				duration: counter+=.18, 
+				duration: counter+=.2, 
 				autoAlpha: 1,
 				ease: "power2.inOut", 
 				scrollTrigger: {
 					trigger: el,
-					start: 'top center+=50',
+					start: 'top center+=250',
 				},
 			});
 		});

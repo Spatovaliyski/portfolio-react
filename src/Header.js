@@ -95,23 +95,64 @@ function Header() {
 		.to( additionalRefs.current, { opacity: 1, duration: .4, ease: "power4.in", stagger: .125})
 	}, []);
 	
+	/**
+	 * HANDLE MOBILE MENU TOGGLE
+	 */
+	const openMenu = (event) => {
+		const siteNavigation = document.getElementById( 'navigation' );
+		const siteBody = document.body;
+		
+		siteBody.classList.toggle( 'is-menu-opened' );
+		siteNavigation.classList.toggle( 'toggled' );
+
+		// Remove the .toggled class and set aria-expanded to false when the user clicks outside the navigation.
+		document.addEventListener( 'click', function( event ) {
+			const isClickInside = siteNavigation.contains( event.target );
+			const isHomeTabButton = event.target.parentNode;
+			console.log(isHomeTabButton);
+			
+			if ( ! isClickInside ) {
+				siteNavigation.classList.remove( 'toggled' );
+				siteBody.classList.remove( 'is-menu-opened' );
+			}
+
+			// If the button contains one of the portfolio "click to scroll to" classs "home-tab" > close menu components and proceed with scroll behavior
+			if ( isHomeTabButton.classList.contains('home-tab') ) {
+				siteNavigation.classList.remove( 'toggled' );
+				siteBody.classList.remove( 'is-menu-opened' );
+			}
+		});
+
+	}
+	
 	return (
 		<header className={fixed ? 'site-header site-header-sticky' : 'site-header'} >
 			<div className="header-title" ref={el => {siteTitle = el}}>
-				<a href="/">Martin Spatovaliyski</a>
+				<a href={process.env.PUBLIC_URL}>Martin Spatovaliyski</a>
 			</div>
 			
-			<div className="header-nav">
+			<nav className="header-nav" id="navigation">
 				<ul className="nav-menu">
-					<li ref={addToRefs} onClick={clickAnimation} className="nav-menu-item"><a href="#experience">Experience</a></li>
-					<li ref={addToRefs} onClick={clickAnimation} className="nav-menu-item"><a  href="#work">Projects</a></li>
-					<li ref={addToRefs} onClick={clickAnimation} className="nav-menu-item"><a href="#contact">Contact</a></li>
+					<li ref={addToRefs} onClick={clickAnimation} className="nav-menu-item home-tab"><a href="#experience">Experience</a></li>
+					<li ref={addToRefs} onClick={clickAnimation} className="nav-menu-item home-tab"><a href="#work">Projects</a></li>
+					<li ref={addToRefs} onClick={clickAnimation} className="nav-menu-item home-tab"><a href="#contact">Contact</a></li>
 					<li ref={addAdditionalRefs} className="nav-menu-item spacer icon item-additional"><a href="https://www.linkedin.com/in/martin-spatovaliyski-554622aa/" target="_blank" rel="noreferrer">{<Icons name="linkedin"/>}</a></li>
 					<li ref={addAdditionalRefs} className="nav-menu-item icon item-additional"><a href="https://github.com/Spatovaliyski" target="_blank" rel="noreferrer">{<Icons name="github"/>}</a></li>
 					<li ref={addAdditionalRefs} className="nav-menu-item icon item-additional"><a href="https://profiles.wordpress.org/mspatovaliyski/" target="_blank" rel="noreferrer">{<Icons name="wordpress"/>}</a></li>
 					<li ref={addAdditionalRefs} className="nav-menu-item cv item-additional"><a href="https://spatovaliyski.com/wp-content/uploads/2022/10/Martins-Resume.pdf" target="_blank" rel="noreferrer">Portfolio</a></li>
 				</ul>
-			</div>
+
+				<a onClick={openMenu} className="menu-toggle" aria-controls="primary-menu" aria-expanded="false" href='#nav-open'>
+					<svg className="hamburger hamburger-rotate" viewBox="0 0 100 100" width="80">
+						<path className="line top"
+								d="m 70,33 h -40 c 0,0 -8.5,-0.149796 -8.5,8.5 0,8.649796 8.5,8.5 8.5,8.5 h 20 v -20" />
+						<path className="line middle"
+								d="m 70,50 h -40" />
+						<path className="line bottom"
+								d="m 30,67 h 40 c 0,0 8.5,0.149796 8.5,-8.5 0,-8.649796 -8.5,-8.5 -8.5,-8.5 h -20 v 20" />
+					</svg>
+				</a>
+			</nav>
 		</header>
 	);
 }

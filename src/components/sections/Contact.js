@@ -24,11 +24,22 @@ export default function Contact() {
 				ease: "power2.inOut", 
 				scrollTrigger: {
 					trigger: el,
-					start: 'top center+=150',
+					start: 'top center+=200',
 				},
 			});
 		});
 	}, []);
+
+	const copyClipboard = (e) => {
+		e.preventDefault();
+		let mail = document.querySelector('#copy-clipboard-text').value;
+		
+		navigator.clipboard.writeText(mail);
+		document.querySelector('#copy-clipboard-confirm').classList.add('is-visible');
+		setTimeout(() => {
+			document.querySelector('#copy-clipboard-confirm').classList.remove('is-visible');
+		}, 1000);
+	}
 
 	return (
 		<section id="contact" className="section section-contact">
@@ -43,10 +54,11 @@ export default function Contact() {
 						</div>
 
 						<div className="contact-group" ref={addToRefs}>
-							<a href="mailto:martinspatovaliyski@gmail.com" rel="noopener noreferrer" target="_blank" className="button button-primary">Let's chat</a>
+							<a  href="mailto:martinspatovaliyski@gmail.com" rel="noopener noreferrer" target="_blank" className="button button-primary">Let's chat</a>
 							<span className="contact-copy">
-								<a id="copy-chat-clipboard" href="martinspatovaliyski@gmail.com">Copy email to clipboard instead</a>
-								<span className="copy-chat-popup">Copied!</span>
+								<a onClick={copyClipboard} id="copy-chat-clipboard" href="#">Copy email to clipboard instead</a>
+								<input id="copy-clipboard-text" type="hidden" value="martinspatovaliyski@gmail.com" />
+								<span id="copy-clipboard-confirm" className="copy-chat-popup">Copied!</span>
 							</span>
 						</div>
 					</div>
