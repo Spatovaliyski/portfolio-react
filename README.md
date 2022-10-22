@@ -2,7 +2,7 @@
 
 ## Short information
 
-This project was created to duplicate the WordPress version of my portfolio found here: [https://github.com/Spatovaliyski/portfolio](https://github.com/Spatovaliyski/portfolio)
+This project was created to duplicate the WordPress version of my portfolio found here: [https://spatovaliyski.com](https://spatovaliyski.com)
 
 I've bootstrapped [https://github.com/facebook/create-react-app] To make this work
 
