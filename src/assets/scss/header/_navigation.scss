@@ -69,6 +69,11 @@
 	}
 }
 
+
+.menu-toggle {
+	display: none;
+}
+
 @media (max-width: $breakpoint-medium) {
 	// Mobile styles for primary menu
 	.header-nav {
