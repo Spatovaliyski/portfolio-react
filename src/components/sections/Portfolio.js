@@ -1,19 +1,64 @@
+import { useEffect, useRef } from "react";
+import {gsap} from 'gsap';
 import PortfolioItem from "../portfolio/PortfolioItem"
 
 export default function Portfolio() {
+	/**
+	 * GSAP COMPONENTS
+	 */
+	let headlineRefs = useRef([]);
+	let portfolioRefs = useRef([]);
+ 
+	headlineRefs.current = [];
+	portfolioRefs.current = [];
+ 
+	const addToHeadlineRefs = (el) => {
+		if (el && !headlineRefs.current.includes(el)) {
+			headlineRefs.current.push(el);
+		}
+	};
+
+	const addToPortfolioRefs = (el) => {
+		if (el && !portfolioRefs.current.includes(el)) {
+			portfolioRefs.current.push(el);
+		}
+	};
+ 
+	useEffect(() => {
+		gsap.to( headlineRefs.current, { opacity: 1, y: 0, duration: .8, ease: "power2.inOut", scrollTrigger: { trigger: '.section-projects'}, stagger: .1})
+		
+		let counter = 0.4;
+		portfolioRefs.current.forEach((el) => {
+			gsap.fromTo( el, {
+				autoAlpha: 0,
+				y: 40, 
+			}, {
+				y: 0,
+				duration: counter+=.18, 
+				autoAlpha: 1,
+				ease: "power2.inOut", 
+				scrollTrigger: {
+					trigger: el,
+					start: 'top center+=50',
+				},
+			});
+		});
+	}, []);
+
 	return (
 		<section id="work" className="section section-projects">
 			<div className="section-container">
 				<div className="section-title">
 					<div className="headline">
-						<p className="headline-catch">What's my background?</p>
-						<h2 className="headline-title headline-scaled">Let's take a look at some old&nbsp;<span>work</span></h2>
+						<p className="headline-catch" ref={addToHeadlineRefs}>What's my background?</p>
+						<h2 className="headline-title headline-scaled" ref={addToHeadlineRefs}>Let's take a look at some old&nbsp;<span>work</span></h2>
 					</div>
 				</div>
 
 				<aside className="section-aside">
 					<div className="portfolio-tabs">
 						<PortfolioItem
+							animRef={addToPortfolioRefs}
 							imageLink={"https://spatovaliyski.com/wp-content/uploads/2022/10/chrome_9IAdHpKTiN.jpg"}
 							title={"CILECT"}
 							link={"https://cilect.org"}
@@ -24,6 +69,7 @@ export default function Portfolio() {
 						/>
 
 						<PortfolioItem
+							animRef={addToPortfolioRefs}
 							imageLink={"https://spatovaliyski.com/wp-content/uploads/2022/10/chrome_oKHPxdr4zL.png"}
 							title={"Portfolio v1.0"}
 							link={"https://github.com/Spatovaliyski/portfolio"}
@@ -37,6 +83,7 @@ export default function Portfolio() {
 						/>
 
 						<PortfolioItem
+							animRef={addToPortfolioRefs}
 							imageLink={"https://spatovaliyski.com/wp-content/uploads/2022/10/CaqWzGe.png"}
 							title={'"Granny Goes Deep"'}
 							link={"https://ldjam.com/events/ludum-dare/48/granny-goes-deep"}
@@ -54,6 +101,7 @@ export default function Portfolio() {
 						/>
 
 						<PortfolioItem
+							animRef={addToPortfolioRefs}
 							imageLink={"https://spatovaliyski.com/wp-content/uploads/2022/10/chrome_hC77g9HnVT.png"}
 							title={"SCII Panel"}
 							link={"https://github.com/Spatovaliyski/sc2-webui"}
@@ -67,6 +115,7 @@ export default function Portfolio() {
 						/>
 
 						<PortfolioItem
+							animRef={addToPortfolioRefs}
 							imageLink={"https://spatovaliyski.com/wp-content/uploads/2022/10/chrome_qEbCacuGel.png"}
 							title={"League of Legends - Beta launcher prototype"}
 							link={"https://github.com/Spatovaliyski/LeagueWeb"}

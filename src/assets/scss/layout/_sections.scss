@@ -40,6 +40,16 @@ $side-padding-mobile: 1em;
 		animation: revealUp 0.7s $transition-reveal forwards !important;
 	}
 
+	// General Section properties styling
+	&-title {
+		.headline-title,
+		.headline-catch,
+		.copy p {
+			opacity: 0;
+			transform: translateY(.5rem);
+		}
+	}
+
 	&-welcome {
 		min-height: 90vh;
 		display: flex;
@@ -86,6 +96,7 @@ $side-padding-mobile: 1em;
 		}
 
 		.headline-title {
+			opacity: 1;
 			--reveal-text-time: 1.2s;
 
 			p {
@@ -103,6 +114,7 @@ $side-padding-mobile: 1em;
 		.copy p {
 			@include mixinRevealText;
 
+			opacity: 10;
 			--reveal-text-time: 1.8s;
 		}
 	}

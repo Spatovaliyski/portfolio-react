@@ -1,9 +1,9 @@
-export default function PortfolioItem({imageLink, title, year, desc, techStack, link, redirects}) {
+export default function PortfolioItem({imageLink, title, year, desc, techStack, link, redirects, animRef}) {
 	if (redirects?.length === 0) {
 		redirects = [];
 	}
 	return (
-		<div className="portfolio-item">
+		<div className="portfolio-item" ref={animRef}>
 			<picture className="portfolio-thumbnail">
 				<img src={imageLink} alt="" />
 			</picture>

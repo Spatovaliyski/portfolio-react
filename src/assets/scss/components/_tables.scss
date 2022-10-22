@@ -4,6 +4,10 @@ table {
 }
 
 .skills-table {
+	h3 {
+		opacity: 0;
+		transform: translateY(-.5em);
+	}
 	h3 > span {
 		color: #7749a4;
 	}
@@ -33,6 +37,9 @@ table {
 		justify-content: center;
 		text-align: center;
 		font-size: .85em;
+
+		transform: translateY(.5em);
+		opacity: 0;
 
 		&.highlight {
 			color: #FFF;
