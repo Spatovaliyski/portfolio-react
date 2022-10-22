@@ -59,7 +59,7 @@ export default function Portfolio() {
 					<div className="portfolio-tabs">
 						<PortfolioItem
 							animRef={addToPortfolioRefs}
-							imageLink={"https://spatovaliyski.com/wp-content/uploads/2022/10/chrome_9IAdHpKTiN.jpg"}
+							imageLink={"https://wp.spatovaliyski.com/wp-content/uploads/2022/10/chrome_9IAdHpKTiN.jpg"}
 							title={"CILECT"}
 							link={"https://cilect.org"}
 							year={"Ongoing"}
@@ -70,7 +70,7 @@ export default function Portfolio() {
 
 						<PortfolioItem
 							animRef={addToPortfolioRefs}
-							imageLink={"https://spatovaliyski.com/wp-content/uploads/2022/10/chrome_oKHPxdr4zL.png"}
+							imageLink={"https://wp.spatovaliyski.com/wp-content/uploads/2022/10/chrome_oKHPxdr4zL.png"}
 							title={"Portfolio v1.0"}
 							link={"https://github.com/Spatovaliyski/portfolio"}
 							year={"2022"}
@@ -84,7 +84,7 @@ export default function Portfolio() {
 
 						<PortfolioItem
 							animRef={addToPortfolioRefs}
-							imageLink={"https://spatovaliyski.com/wp-content/uploads/2022/10/CaqWzGe.png"}
+							imageLink={"https://wp.spatovaliyski.com/wp-content/uploads/2022/10/CaqWzGe.png"}
 							title={'"Granny Goes Deep"'}
 							link={"https://ldjam.com/events/ludum-dare/48/granny-goes-deep"}
 							year={"2021"}
@@ -102,7 +102,7 @@ export default function Portfolio() {
 
 						<PortfolioItem
 							animRef={addToPortfolioRefs}
-							imageLink={"https://spatovaliyski.com/wp-content/uploads/2022/10/chrome_hC77g9HnVT.png"}
+							imageLink={"https://wp.spatovaliyski.com/wp-content/uploads/2022/10/chrome_hC77g9HnVT.png"}
 							title={"SCII Panel"}
 							link={"https://github.com/Spatovaliyski/sc2-webui"}
 							year={"2020"}
@@ -116,7 +116,7 @@ export default function Portfolio() {
 
 						<PortfolioItem
 							animRef={addToPortfolioRefs}
-							imageLink={"https://spatovaliyski.com/wp-content/uploads/2022/10/chrome_qEbCacuGel.png"}
+							imageLink={"https://wp.spatovaliyski.com/wp-content/uploads/2022/10/chrome_qEbCacuGel.png"}
 							title={"League of Legends - Beta launcher prototype"}
 							link={"https://github.com/Spatovaliyski/LeagueWeb"}
 							year={"2019"}
