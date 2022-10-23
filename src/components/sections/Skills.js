@@ -42,10 +42,10 @@ export default function Skills() {
 	};
 
 	useEffect(() => {
-		gsap.to( skillsRefs.current, { opacity: 1, y: 0, duration: .4, ease: "power2.inOut", scrollTrigger: { trigger: '.section-work'}, stagger: .08})
-		gsap.to( skillsRefsSecond.current, { opacity: 1, y: 0, duration: .6, ease: "power2.inOut", scrollTrigger: { trigger: '.section-work'}, stagger: .08})
-		gsap.to( skillsRefsThird.current, { opacity: 1, y: 0, duration: .6, ease: "power2.inOut", scrollTrigger: { trigger: '.section-work'}, stagger: .08})
-		gsap.to( headlineRefs.current, { opacity: 1, y: 0, duration: .8, ease: "power2.inOut", scrollTrigger: { trigger: '.section-work'}, stagger: .125})
+		gsap.to( skillsRefs.current, { opacity: 1, y: 0, duration: .4, ease: "power2.inOut", scrollTrigger: { trigger: '.skills-tab.hook'}, stagger: .08})
+		gsap.to( skillsRefsSecond.current, { opacity: 1, y: 0, duration: .6, ease: "power2.inOut", scrollTrigger: { trigger: '.skills-tab.hook'}, stagger: .08})
+		gsap.to( skillsRefsThird.current, { opacity: 1, y: 0, duration: .6, ease: "power2.inOut", scrollTrigger: { trigger: '.skills-tab.hook'}, stagger: .08})
+		gsap.to( headlineRefs.current, { opacity: 1, y: 0, duration: .8, ease: "power2.inOut", scrollTrigger: { trigger: '.skills-tab.hook'}, stagger: .125})
 	}, []);
 
   return (
@@ -68,7 +68,7 @@ export default function Skills() {
 			<aside className="section-aside">
 				<div className="skills-table">
 					<h3  ref={addToRefs}>Skills I possess</h3>
-					<ul className="skills-tab">
+					<ul className="skills-tab hook">
 						<li ref={addToRefs} className="skill highlight">HTML5</li>
 						<li ref={addToRefs} className="skill highlight">SCSS/CSS</li>
 						<li ref={addToRefs} className="skill highlight">Git</li>

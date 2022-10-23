@@ -1,6 +1,15 @@
-export default function PortfolioItem({imageLink, title, year, desc, techStack, link, redirects, animRef}) {
+import { ReactComponent as ReactIcon } from '../../assets/images/react_icon.svg';
+import { ReactComponent as WPIcon} from '../../assets/images/wp_icon.svg';
+
+export default function PortfolioItem({imageLink, title, year, desc, techStack, link, redirects, animRef, icon}) {
 	if (redirects?.length === 0) {
 		redirects = [];
+	}
+
+	if (icon === "react") {
+		icon = <ReactIcon/>;
+	} else if (icon === "wp") {
+		icon = <WPIcon />
 	}
 	return (
 		<div className="portfolio-item" ref={animRef}>
@@ -9,7 +18,7 @@ export default function PortfolioItem({imageLink, title, year, desc, techStack, 
 			</picture>
 
 			<div className="portfolio-item-info">
-				<h2 className="portfolio-title"><a target="_blank" rel="noreferrer" href={link} className="portfolio-item-link">{title}</a></h2>
+				<h2 className="portfolio-title"><a target="_blank" rel="noreferrer" href={link} className="portfolio-item-link">{title} {icon}</a></h2>
 				<div className="portfolio-description">
 					<p>{year}</p>
 					<p>{desc}</p>
