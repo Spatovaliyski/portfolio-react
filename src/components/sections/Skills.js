@@ -10,12 +10,10 @@ export default function Skills() {
 	let headlineRefs = useRef([]);
 	let skillsRefs = useRef([]);
 	let skillsRefsSecond = useRef([]);
-	let skillsRefsThird = useRef([]);
 
 	headlineRefs.current = [];
 	skillsRefs.current = [];
 	skillsRefsSecond.current = [];
-	skillsRefsThird.current = [];
 
 	const addToHeadlineRefs = (el) => {
 		if (el && !headlineRefs.current.includes(el)) {
@@ -35,17 +33,10 @@ export default function Skills() {
 		}
 	};
 
-	const addToRefsThird = (el) => {
-		if (el && !skillsRefsThird.current.includes(el)) {
-			skillsRefsThird.current.push(el);
-		}
-	};
-
 	useEffect(() => {
-		gsap.to( skillsRefs.current, { opacity: 1, y: 0, duration: .4, ease: "power2.inOut", scrollTrigger: { trigger: '.skills-tab.hook'}, stagger: .08})
-		gsap.to( skillsRefsSecond.current, { opacity: 1, y: 0, duration: .6, ease: "power2.inOut", scrollTrigger: { trigger: '.skills-tab.hook'}, stagger: .08})
-		gsap.to( skillsRefsThird.current, { opacity: 1, y: 0, duration: .6, ease: "power2.inOut", scrollTrigger: { trigger: '.skills-tab.hook'}, stagger: .08})
-		gsap.to( headlineRefs.current, { opacity: 1, y: 0, duration: .8, ease: "power2.inOut", scrollTrigger: { trigger: '.skills-tab.hook'}, stagger: .125})
+		gsap.to( skillsRefs.current, { opacity: 1, y: 0, duration: .4, ease: "power2.inOut", scrollTrigger: { trigger: '.section-experience .copy'}, stagger: .08})
+		gsap.to( skillsRefsSecond.current, { opacity: 1, y: 0, duration: .6, ease: "power2.inOut", scrollTrigger: { trigger: '.section-experience .copy'}, stagger: .08})
+		gsap.to( headlineRefs.current, { opacity: 1, y: 0, duration: .8, ease: "power2.inOut", scrollTrigger: { trigger: '.section-experience .copy'}, stagger: .125})
 	}, []);
 
   return (
@@ -72,38 +63,31 @@ export default function Skills() {
 						<li ref={addToRefs} className="skill highlight">HTML5</li>
 						<li ref={addToRefs} className="skill highlight">SCSS/CSS</li>
 						<li ref={addToRefs} className="skill highlight">Git</li>
-						<li ref={addToRefs} className="skill highlight">jQuery</li>
-						<li ref={addToRefs} className="skill highlight">JSON</li>
-						<li ref={addToRefs} className="skill highlight">Ajax</li>
 						<li ref={addToRefs} className="skill highlight">ACF</li>
-						<li ref={addToRefs} className="skill highlight">Gulp</li>
-						<li ref={addToRefs} className="skill highlight">PHP</li>
-						<li ref={addToRefs} className="skill highlight">LAMP</li>
+						<li ref={addToRefs} className="skill highlight">jQuery</li>
+						<li ref={addToRefs} className="skill highlight">JavaScript (ES6)</li>
+						<li ref={addToRefs} className="skill highlight">Ajax</li>
+						<li ref={addToRefs} className="skill highlight">GSAP</li>
 						<li ref={addToRefs} className="skill highlight">WordPress</li>
+						<li ref={addToRefs} className="skill highlight">React</li>
+						<li ref={addToRefs} className="skill highlight">Gulp</li>
+						<li ref={addToRefs} className="skill highlight">JSON</li>
 						<li ref={addToRefs} className="skill highlight">Foundation 5</li>
-						<li ref={addToRefs} className="skill highlight">E2E Development</li>
-						<li ref={addToRefs} className="skill highlight">Project Leadership</li>
+						<li ref={addToRefs} className="skill highlight">Adobe Suite</li>
 					</ul>
 
-					<h3 ref={addToRefsSecond}>What I've picked from time to time (on a need basis)</h3>
+					<h3 ref={addToRefsSecond}>Additionally, I have dabbled with</h3>
 					<ul className="skills-tab">
-						<li ref={addToRefsSecond} className="skill">Bootstrap</li>
-						<li ref={addToRefsSecond} className="skill">GSAP</li>
-						<li ref={addToRefsSecond} className="skill">Locomotive</li>
+						<li ref={addToRefsSecond} className="skill">Locomotive.js</li>
+						<li ref={addToRefsSecond} className="skill">PHP</li>
+						<li ref={addToRefsSecond} className="skill">Vue</li>
 						<li ref={addToRefsSecond} className="skill">XML</li>
-						<li ref={addToRefsSecond} className="skill">WooCommerce</li>
 						<li ref={addToRefsSecond} className="skill">SQL</li>
+						<li ref={addToRefsSecond} className="skill">WooCommerce</li>
+						<li ref={addToRefsSecond} className="skill">LAMP</li>
 						<li ref={addToRefsSecond} className="skill">Figma</li>
-						<li ref={addToRefsSecond} className="skill">Adobe Suite</li>
-					</ul>
-
-					<h3 ref={addToRefsThird}>I've dabbled with (&nbsp;<span>and wish to expand!</span>&nbsp;)</h3>
-					<ul className="skills-tab">
-						<li ref={addToRefsThird} className="skill highlight">React</li>
-						<li ref={addToRefsThird} className="skill">Vue</li>
-						<li ref={addToRefsThird} className="skill">Three.js</li>
-						<li ref={addToRefsThird} className="skill">Laravel</li>
-						<li ref={addToRefsThird} className="skill">Python</li>
+						<li ref={addToRefsSecond} className="skill">E2E Development</li>
+						<li ref={addToRefsSecond} className="skill">Project Leadership</li>
 					</ul>
 				</div>
 			</aside>

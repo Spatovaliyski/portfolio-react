@@ -139,7 +139,7 @@ function Header() {
 					<li ref={addAdditionalRefs} className="nav-menu-item spacer icon item-additional"><a href="https://www.linkedin.com/in/martin-spatovaliyski-554622aa/" target="_blank" rel="noreferrer">{<Icons name="linkedin"/>}</a></li>
 					<li ref={addAdditionalRefs} className="nav-menu-item icon item-additional"><a href="https://github.com/Spatovaliyski" target="_blank" rel="noreferrer">{<Icons name="github"/>}</a></li>
 					<li ref={addAdditionalRefs} className="nav-menu-item icon item-additional"><a href="https://profiles.wordpress.org/mspatovaliyski/" target="_blank" rel="noreferrer">{<Icons name="wordpress"/>}</a></li>
-					<li ref={addAdditionalRefs} className="nav-menu-item cv item-additional"><a href="https://spatovaliyski.com/wp-content/uploads/2022/10/Martins-Resume.pdf" target="_blank" rel="noreferrer">Portfolio</a></li>
+					<li ref={addAdditionalRefs} className="nav-menu-item cv item-additional"><a href="https://wp.spatovaliyski.com/wp-content/uploads/2022/10/Martins-Resume.pdf" target="_blank" rel="noreferrer">Portfolio</a></li>
 				</ul>
 
 				<a onClick={openMenu} className="menu-toggle" aria-controls="primary-menu" aria-expanded="false" href='#nav-open'>
