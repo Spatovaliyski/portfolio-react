@@ -24,7 +24,6 @@ export default function Contact() {
 				ease: "power2.inOut", 
 				scrollTrigger: {
 					trigger: el,
-					start: 'top center+=200',
 				},
 			});
 		});

@@ -54,4 +54,8 @@ table {
 			flex-basis: calc(100% / 5 - 1em);
 		}
 	}
+
+	&:last-child {
+		margin-bottom: 0;
+	}
 }

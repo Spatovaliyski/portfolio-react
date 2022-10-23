@@ -36,7 +36,7 @@ export default function Hero() {
 					<div className="headline">
 						<p className="headline-catch" data-context>Let's keep it simple</p>
 						<h1 className="headline-title headline-scaled">
-							<p data-context>Heya,</p>
+							<p data-context>Heya,</p>&nbsp;
 							<br/>
 							<span data-context>I'm</span>&nbsp;
 							<p data-context>Martin Spatovaliyski</p>

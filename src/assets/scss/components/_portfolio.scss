@@ -65,6 +65,12 @@
 		z-index: 1;
 		border-radius: 6px;
 		overflow: hidden;
+
+		@media (max-width: $breakpoint-medium) {
+			padding: 1.5em;
+			border-top-left-radius: 0;
+			border-top-right-radius: 0;
+		}
 	}
 
 	&-description {
@@ -149,6 +155,10 @@
 			&:not(:last-child):after {
 				content: ','
 			}
+		}
+
+		@media (max-width: $breakpoint-medium) {
+			padding-left: 1.5em;
 		}
 	}
 }

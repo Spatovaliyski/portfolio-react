@@ -92,7 +92,7 @@ export default function Skills() {
 						<li ref={addToRefsSecond} className="skill">Locomotive</li>
 						<li ref={addToRefsSecond} className="skill">XML</li>
 						<li ref={addToRefsSecond} className="skill">WooCommerce</li>
-						<li ref={addToRefsSecond} className="skill">DB management</li>
+						<li ref={addToRefsSecond} className="skill">SQL</li>
 						<li ref={addToRefsSecond} className="skill">Figma</li>
 						<li ref={addToRefsSecond} className="skill">Adobe Suite</li>
 					</ul>
