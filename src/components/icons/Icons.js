@@ -18,6 +18,8 @@ function Icons(props) {
 		setupIcons.map((key) => {
 			if (props.name === key.name) {
 				return <i key={key.icon} className="menu-icon">{key.icon}</i>;
+			} else {
+				return null;
 			}
 		})
 	)
