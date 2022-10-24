@@ -16,6 +16,8 @@
 	position: relative;
 	
 	&:before {
+		clip-path: inset(0 100% 0 0);
+		overflow: hidden;
 		color: #FFF;
 		content: attr(data-context);
 		position: absolute;

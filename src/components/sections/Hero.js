@@ -1,6 +1,7 @@
-import { useEffect, useState } from 'react';
-import { ReactComponent as Blob } from '../../assets/images/hero_logo.svg';
-
+import { useEffect, useRef, useState } from 'react';
+import Lottie from 'react-lottie';
+import HeroLottie from '../../assets/lotties/lottie_developer';
+import gsap from 'gsap';
 
 export default function Hero() { 
 	const [isLoaded, setIsLoaded] = useState(false);
@@ -29,12 +30,52 @@ export default function Hero() {
 		});
 	}
 
+	/**
+	 * Lottie options
+	 */
+	const lottieDefaultOptions = {
+		loop: true,
+		autoplay: true,
+		animationData: HeroLottie,
+		rendererSettings: {
+			preserveAspectRatio: "xMidYMid slice"
+		}
+	};
+
+	/**
+	 * GSAP
+	 */
+	let contactRefs = useRef([]);
+	contactRefs.current = [];
+ 
+	const addToRefs = (el) => {
+		 if (el && !contactRefs.current.includes(el)) {
+			 contactRefs.current.push(el);
+		 }
+	};
+	 
+	useEffect(() => {
+		let counter = 0.4;
+		contactRefs.current.forEach((el) => {
+			gsap.fromTo( el, {
+				autoAlpha: 0,
+				y: 30, 
+			}, {
+				y: 0,
+				duration: counter+=.3, 
+				autoAlpha: 1,
+				ease: "power2.inOut", 
+				scrollTrigger: {
+					trigger: el,
+				},
+			});
+		});
+	}, []);
 	return (
 		<section className="section section-welcome">
 			<div className="section-container">
-				<div className="section-title">
+				<div className="section-title" ref={addToRefs}>
 					<div className="headline">
-						<p className="headline-catch" data-context>Let's keep it simple</p>
 						<h1 className="headline-title headline-scaled">
 							<p data-context>Heya,</p>&nbsp;
 							<br/>
@@ -49,8 +90,12 @@ export default function Hero() {
 					</div>
 				</div>
 
-				<aside className="section-aside">
-					<Blob />
+				<aside className="section-aside" ref={addToRefs}>
+					<Lottie 
+						options={lottieDefaultOptions}
+						height={"100%"}
+						width={"100%"}
+					/>
 				</aside>
 			</div>
 		</section>

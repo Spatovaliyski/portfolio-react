@@ -66,10 +66,12 @@ $side-padding-mobile: 1em;
 
 		.section-aside {
 			flex: 1;
+			padding-bottom: 3em;
 
 			@media (max-width: $breakpoint-medium) {
 				position: absolute;
 				z-index: -12;
+				opacity: .05 !important;
 			}
 		}
 
@@ -89,15 +91,9 @@ $side-padding-mobile: 1em;
 			}
 		}
 
-		.headline-catch {
-			@include mixinRevealText;
-
-			--reveal-text-time: 1.8s;
-		}
-
 		.headline-title {
 			opacity: 1;
-			--reveal-text-time: 1.2s;
+			--reveal-text-time: 2s;
 
 			p {
 				display: inline-block;
@@ -107,15 +103,17 @@ $side-padding-mobile: 1em;
 
 		.headline-subtitle {
 			@include mixinRevealText;
-
-			--reveal-text-time: 1.8s;
+			--reveal-text-time: 2s;
+			
+			&:before { animation-delay: .6s }
 		}
 
 		.copy p {
 			@include mixinRevealText;
-
-			opacity: 10;
-			--reveal-text-time: 1.8s;
+			opacity: 1;
+			--reveal-text-time: 2s;
+			
+			&:before { animation-delay: 1s }
 		}
 	}
 

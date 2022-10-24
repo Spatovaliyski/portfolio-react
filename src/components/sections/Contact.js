@@ -55,7 +55,7 @@ export default function Contact() {
 						<div className="contact-group" ref={addToRefs}>
 							<a  href="mailto:martinspatovaliyski@gmail.com" rel="noopener noreferrer" target="_blank" className="button button-primary">Let's chat</a>
 							<span className="contact-copy">
-								<a onClick={copyClipboard} id="copy-chat-clipboard" href="#">Copy email to clipboard instead</a>
+								<a onClick={copyClipboard} id="copy-chat-clipboard" href="copy-clipboard">Copy email to clipboard instead</a>
 								<input id="copy-clipboard-text" type="hidden" value="martinspatovaliyski@gmail.com" />
 								<span id="copy-clipboard-confirm" className="copy-chat-popup">Copied!</span>
 							</span>
