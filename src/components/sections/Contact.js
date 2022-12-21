@@ -49,7 +49,7 @@ export default function Contact() {
 						<h2 className="headline-title headline-scaled" ref={addToRefs}>Get in touch</h2>
 						
 						<div className="copy">
-							<p ref={addToRefs}>I'm currently looking for new oportunities! The button below should open an email client with my Email address auto-filled.</p>
+							<p ref={addToRefs}>I'm currently not looking for new oportunities. The button below should open your preferred Email client with my Email address auto-fileld.</p>
 						</div>
 
 						<div className="contact-group" ref={addToRefs}>
