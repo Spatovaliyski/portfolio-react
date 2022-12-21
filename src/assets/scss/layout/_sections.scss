@@ -60,18 +60,24 @@ $side-padding-mobile: 1em;
 			min-height: 60vh; // Reduce the height a lil bit for all sorts of devices under $medium. The intent is to show a little bit of the next section content while being tidy
 		}
 
-		svg {
-			width: 100%;
-		}
-
 		.section-aside {
 			flex: 1;
 			padding-bottom: 3em;
+
+			svg {
+				//pointer-events: none;
+				width: 100%;
+			}
 
 			@media (max-width: $breakpoint-medium) {
 				position: absolute;
 				z-index: -12;
 				opacity: .05 !important;
+			}
+
+			// Dangerous work here! basic "div" styling will go under section-welcome under its aside only because there's a lottie animation here. 
+			div {
+				pointer-events: none;
 			}
 		}
 

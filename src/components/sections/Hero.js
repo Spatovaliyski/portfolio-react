@@ -34,8 +34,10 @@ export default function Hero() {
 	 * Lottie options
 	 */
 	const lottieDefaultOptions = {
+		speed: 0.5,
 		loop: true,
 		autoplay: true,
+		controls: false,
 		animationData: HeroLottie,
 		rendererSettings: {
 			preserveAspectRatio: "xMidYMid slice"
@@ -71,6 +73,7 @@ export default function Hero() {
 			});
 		});
 	}, []);
+	
 	return (
 		<section className="section section-welcome">
 			<div className="section-container">
@@ -82,16 +85,16 @@ export default function Hero() {
 							<span data-context>I'm</span>&nbsp;
 							<p data-context>Martin Spatovaliyski</p>
 						</h1>
-						<h3 className="headline-subtitle" data-context>web developer / WordPress enthusiast, core contributor</h3>
+						<h3 className="headline-subtitle" data-context>Front-end developer, UI/UX Engineer, WordPress enthusiast</h3>
 					</div>
 
 					<div className="copy animation-reveal">
-						<p data-context>I'm a Front-end developer who does theme building, plugin development, end-to-end website development with and without WordPress for just over 5 years.</p>
+						<p data-context>I am Front-end developer who does end-to-end website development, apps, doodles, WordPress custom theme building, plugin development, custom solutions for just over 5 years</p>
 					</div>
 				</div>
 
 				<aside className="section-aside" ref={addToRefs}>
-					<Lottie 
+					<Lottie
 						options={lottieDefaultOptions}
 						height={"100%"}
 						width={"100%"}
